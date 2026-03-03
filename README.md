@@ -40,15 +40,17 @@ Neural network structure:
 
 Loss function:
 
-\[
-Loss = MSE_{series} + \alpha \cdot MSE_{threshold}
-\]
+Loss function:
+
+$$
+\text{Loss} = MSE_{\text{series}} + \alpha \cdot MSE_{\text{threshold}}
+$$
 
 Where:
 
-- \(MSE_{series}\) = reconstruction error of the full temperature time-series  
-- \(MSE_{threshold}\) = error in predicted time-to-15°C  
-- \(\alpha\) = weighting factor (default = 0.4)
+- $MSE_{\text{series}}$ = reconstruction error of the full temperature time-series  
+- $MSE_{\text{threshold}}$ = error in predicted time-to-15°C  
+- $\alpha$ = weighting factor (default = 0.4) \(\alpha\) = weighting factor (default = 0.4)
 
 ---
 
@@ -56,7 +58,6 @@ Where:
 paper-lstm/
 
 ├── src/
-
 │ ├── utils/
 │ ├── data/
 │ ├── train/
