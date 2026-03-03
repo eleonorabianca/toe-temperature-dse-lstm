@@ -1,4 +1,7 @@
 # LSTM-Based Prediction of Big Toe Skin Temperature  
+
+[![DOI](https://zenodo.org/badge/1171739681.svg)](https://doi.org/10.5281/zenodo.18851662)
+
 ## Safety-Oriented Modeling for Cold Exposure Assessment
 
 This repository provides the full training and evaluation pipeline for an LSTM-based model designed to predict big toe skin temperature during controlled cold exposure experiments.
