@@ -54,7 +54,9 @@ Where:
 
 ## Repository Structure
 paper-lstm/
+
 ├── src/
+
 │ ├── utils/
 │ ├── data/
 │ ├── train/
