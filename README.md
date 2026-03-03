@@ -54,20 +54,6 @@ Where:
 
 ---
 
-## Repository Structure
-paper-lstm/
-
-├── src/
-│ ├── utils/
-│ ├── data/
-│ ├── train/
-│ └── eval/
-├── examples/
-│ └── train.py
-├── requirements.txt
-├── LICENSE
-└── README.md
-
 ## Installation
 
 It is recommended to use a virtual environment.
