@@ -3,8 +3,9 @@
 Edit BASE_DATA_PATH to point to your local/private dataset directory.
 Do NOT commit data to the public repository.
 """
-
+import sys
 from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parents[1]))
 import numpy as np
 
 from src.utils.env_setup import configure_cuda, set_seed
