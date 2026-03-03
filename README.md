@@ -3,7 +3,7 @@
 This repository contains cleaned, modular code for training and evaluating an LSTM model that predicts big toe temperature time-series.
 
 ## Data
-Raw experimental data are **not included** for privacy reasons.
+Raw experimental data are **not included** for ownership reasons.
 The loader expects folders like:
 
 ```
