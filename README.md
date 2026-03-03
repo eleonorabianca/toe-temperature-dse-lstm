@@ -40,8 +40,6 @@ Neural network structure:
 
 Loss function:
 
-Loss function:
-
 $$
 \text{Loss} = MSE_{\text{series}} + \alpha \cdot MSE_{\text{threshold}}
 $$
@@ -58,18 +56,18 @@ Where:
 
 It is recommended to use a virtual environment.
 
-```bash
+```
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-
+```
 ## Training
 
 Edit the base_path variable here to point to the directory where the data is stored.
 
-'''
+```
 examples/train.py
-''' 
+```
 
 Each Excel file should contain the following columns:
 
@@ -90,7 +88,7 @@ Outputs include:
 - TensorBoard logs
 - Threshold comparison plots
 
-```
+
 ## License
 
 This project is released under the MIT License.
