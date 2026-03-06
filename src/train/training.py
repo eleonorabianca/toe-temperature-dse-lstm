@@ -19,16 +19,15 @@ ArrayLike = Union[np.ndarray, List[np.ndarray]]
 
 
 def pick_one_test_per_folder(
-    X: ArrayLike,
-    Y: ArrayLike,
+    X: "ArrayLike",
+    Y: "ArrayLike",
     meta_list: List[Dict[str, Any]],
     folders: Dict[str, Dict[str, Any]],
     random_seed: int = 42,
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, List[int]]:
-    """Pick one random test sequence per folder name."""
-    random.seed(random_seed)
-    np.random.seed(random_seed)
-
+    """Pick the first test sequence per folder name (deterministic)."""
+    # Nota: random_seed non è più usato (scelta deterministica).
+    
     folder_to_indices: Dict[str, List[int]] = {}
     for idx, meta in enumerate(meta_list):
         folder_name = meta.get("original_folder") or meta.get("anonymized_folder")
@@ -40,12 +39,14 @@ def pick_one_test_per_folder(
         if not candidates:
             print(f"Warning: no candidates found for folder '{folder_name}', skipping.")
             continue
-        test_indices.append(random.choice(candidates))
+        # scelgo il primo indice in ordine crescente (deterministico)
+        chosen = sorted(candidates)[0]
+        test_indices.append(chosen)
 
     all_indices = list(range(len(meta_list)))
     train_indices = [i for i in all_indices if i not in test_indices]
 
-    def pick(arr: ArrayLike, idxs: List[int]) -> np.ndarray:
+    def pick(arr: "ArrayLike", idxs: List[int]) -> np.ndarray:
         if isinstance(arr, np.ndarray):
             return arr[idxs]
         return np.asarray([arr[i] for i in idxs], dtype=object)
