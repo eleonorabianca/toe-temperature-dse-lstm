@@ -1,4 +1,7 @@
 # LSTM-Based Prediction of Big Toe Skin Temperature  
+
+[![DOI](https://zenodo.org/badge/1171739681.svg)](https://doi.org/10.5281/zenodo.18851662)
+
 ## Safety-Oriented Modeling for Cold Exposure Assessment
 
 This repository provides the full training and evaluation pipeline for an LSTM-based model designed to predict big toe skin temperature during controlled cold exposure experiments.
@@ -40,47 +43,34 @@ Neural network structure:
 
 Loss function:
 
-\[
-Loss = MSE_{series} + \alpha \cdot MSE_{threshold}
-\]
+$$
+\text{Loss} = MSE_{\text{series}} + \alpha \cdot MSE_{\text{threshold}}
+$$
 
 Where:
 
-- \(MSE_{series}\) = reconstruction error of the full temperature time-series  
-- \(MSE_{threshold}\) = error in predicted time-to-15°C  
-- \(\alpha\) = weighting factor (default = 0.4)
+- $MSE_{\text{series}}$ = reconstruction error of the full temperature time-series  
+- $MSE_{\text{threshold}}$ = error in predicted time-to-15°C  
+- $\alpha$ = weighting factor (default = 0.4) \(\alpha\) = weighting factor (default = 0.4)
 
 ---
-
-## Repository Structure
-paper-lstm/
-├── src/
-│ ├── utils/
-│ ├── data/
-│ ├── train/
-│ └── eval/
-├── examples/
-│ └── train.py
-├── requirements.txt
-├── LICENSE
-└── README.md
 
 ## Installation
 
 It is recommended to use a virtual environment.
 
-```bash
+```
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-
+```
 ## Training
 
 Edit the base_path variable here to point to the directory where the data is stored.
 
-'''
+```
 examples/train.py
-''' 
+```
 
 Each Excel file should contain the following columns:
 
@@ -100,6 +90,7 @@ Outputs include:
 - Training logs (CSV)
 - TensorBoard logs
 - Threshold comparison plots
+
 
 ## License
 
